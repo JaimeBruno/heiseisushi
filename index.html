@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeiSei Sushi – Gränichen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-lang="de">
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+        <rect width="64" height="64" rx="2" fill="#651A38"/>
+        <path d="M32 52L32 38" stroke="#B88A72" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M28 52L36 52" stroke="#B88A72" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M32 38C30 34 28 30 30 26C31 28 33 30 32 38Z" fill="#B88A72" opacity="0.7"/>
+        <path d="M32 32C28 30 24 27 22 23C25 23 28 25 30 28" stroke="#B88A72" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M32 28C36 26 40 23 42 19C39 19 36 21 34 24" stroke="#B88A72" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="20" cy="21" rx="6" ry="4" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="27" cy="17" rx="5" ry="3.5" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="38" cy="16" rx="6" ry="4" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="44" cy="18" rx="4.5" ry="3" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="32" cy="14" rx="5" ry="3.5" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <path d="M27 42L28 52L36 52L37 42Z" fill="#B88A72" opacity="0.4"/>
+        <rect x="25" y="40" width="14" height="3" rx="1" fill="#B88A72" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none">
+        <rect width="64" height="64" rx="2" fill="#651A38"/>
+        <path d="M32 52L32 38" stroke="#B88A72" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M28 52L36 52" stroke="#B88A72" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M32 38C30 34 28 30 30 26C31 28 33 30 32 38Z" fill="#B88A72" opacity="0.7"/>
+        <path d="M32 32C28 30 24 27 22 23C25 23 28 25 30 28" stroke="#B88A72" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M32 28C36 26 40 23 42 19C39 19 36 21 34 24" stroke="#B88A72" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="20" cy="21" rx="6" ry="4" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="27" cy="17" rx="5" ry="3.5" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="38" cy="16" rx="6" ry="4" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="44" cy="18" rx="4.5" ry="3" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <ellipse cx="32" cy="14" rx="5" ry="3.5" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/>
+        <path d="M27 42L28 52L36 52L37 42Z" fill="#B88A72" opacity="0.4"/>
+        <rect x="25" y="40" width="14" height="3" rx="1" fill="#B88A72" opacity="0.6"/>
+      </svg>
+      HeiSei Sushi
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about"><span class="lang-de">Über uns</span><span class="lang-fr">À propos</span><span class="lang-en">About</span></a></li>
+      <li><a href="#offerings"><span class="lang-de">Angebot</span><span class="lang-fr">Offres</span><span class="lang-en">Offerings</span></a></li>
+      <li><a href="#menu"><span class="lang-de">Speisekarte</span><span class="lang-fr">Menu</span><span class="lang-en">Menu</span></a></li>
+      <li><a href="#courses"><span class="lang-de">Kurse</span><span class="lang-fr">Cours</span><span class="lang-en">Courses</span></a></li>
+      <li><a href="#visit"><span class="lang-de">Kontakt</span><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn active" onclick="setLang('de')">DE</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <a href="https://heiseisushi.ch/bestellen" target="_blank" class="nav-cta">
+        <span class="lang-de">Bestellen</span>
+        <span class="lang-fr">Commander</span>
+        <span class="lang-en">Order</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="#about" onclick="toggleMenu()"><span class="lang-de">Über uns</span><span class="lang-fr">À propos</span><span class="lang-en">About</span></a>
+    <a href="#offerings" onclick="toggleMenu()"><span class="lang-de">Angebot</span><span class="lang-fr">Offres</span><span class="lang-en">Offerings</span></a>
+    <a href="#menu" onclick="toggleMenu()"><span class="lang-de">Speisekarte</span><span class="lang-fr">Menu</span><span class="lang-en">Menu</span></a>
+    <a href="#courses" onclick="toggleMenu()"><span class="lang-de">Kurse</span><span class="lang-fr">Cours</span><span class="lang-en">Courses</span></a>
+    <a href="#visit" onclick="toggleMenu()"><span class="lang-de">Kontakt</span><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a>
+    <div class="mobile-lang">
+      <button class="lang-btn" onclick="setLang('de');toggleMenu()">DE</button>
+      <button class="lang-btn" onclick="setLang('fr');toggleMenu()">FR</button>
+      <button class="lang-btn" onclick="setLang('en');toggleMenu()">EN</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO SCROLL EFFECT
+       Estructura:
+       #scroll-scene          — contenedor que da altura al scroll
+         .scene-sticky        — pegado al viewport mientras dura el scroll
+           .hero-img-layer    — imagen que SUBE al scrollear
+           .cream-layer       — fondo crema que queda debajo
+             .cream-content   — título izq + carrusel der (aparece al subir imagen)
+  ══════════════════════════════════════════════════════════ -->
+  <div id="scroll-scene">
+    <div class="scene-sticky">
+
+      <!-- IMAGEN FIJA de fondo -->
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+
+      <!-- NOMBRE FIJO — efecto split color con clip-path -->
+      <!-- Capa 1: siempre BLANCA (debajo) -->
+      <div class="hero-name hero-name--white" id="heroNameWhite">
+        <h1 class="hero-name-title">HeiSei<br><em>Sushi</em></h1>
+      </div>
+      <!-- Capa 2: siempre BURDEOS (encima), recortada para mostrar solo la parte tapada por la crema -->
+      <div class="hero-name hero-name--crimson" id="heroNameCrimson" aria-hidden="true">
+        <h1 class="hero-name-title">HeiSei<br><em>Sushi</em></h1>
+      </div>
+
+
+      <!-- PANEL CREMA — sube desde abajo -->
+      <div class="cream-panel" id="creamPanel">
+        <div class="cream-inner">
+
+          <!-- Izquierda: vacío (el nombre flota encima) + CTA -->
+          <div class="cream-left-empty" id="creamLeftEmpty">
+            <a href="#visit" class="cream-cta">
+              <span class="lang-de">Reservieren</span>
+              <span class="lang-fr">Réserver</span>
+              <span class="lang-en">Make a Reservation</span>
+            </a>
+          </div>
+
+          <!-- Derecha — carrusel -->
+          <div class="cream-right" id="creamRight">
+            <div class="carousel-wrap" id="carousel">
+              <div class="carousel-track" id="carouselTrack">
+
+                <!--
+                ╔══════════════════════════════════════════════════╗
+                ║  FOTOS DEL CARRUSEL                              ║
+                ║  Carpeta: img/                                   ║
+                ║  Nombres: gallery-1.jpg … gallery-5.jpg          ║
+                ║  Tamaño recomendado: 800 × 600 px (ratio 4:3)    ║
+                ╚══════════════════════════════════════════════════╝
+                -->
+                <div class="carousel-slide">
+                  <img src="img/gallery-1.jpg" onerror="this.parentElement.classList.add('no-img')" alt="HeiSei Sushi 1"/>
+                  <div class="slide-ph"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>img/gallery-1.jpg</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="img/gallery-2.jpg" onerror="this.parentElement.classList.add('no-img')" alt="HeiSei Sushi 2"/>
+                  <div class="slide-ph"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>img/gallery-2.jpg</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="img/gallery-3.jpg" onerror="this.parentElement.classList.add('no-img')" alt="HeiSei Sushi 3"/>
+                  <div class="slide-ph"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>img/gallery-3.jpg</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="img/gallery-4.jpg" onerror="this.parentElement.classList.add('no-img')" alt="HeiSei Sushi 4"/>
+                  <div class="slide-ph"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>img/gallery-4.jpg</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="img/gallery-5.jpg" onerror="this.parentElement.classList.add('no-img')" alt="HeiSei Sushi 5"/>
+                  <div class="slide-ph"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>img/gallery-5.jpg</span></div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-nav">
+              <div class="carousel-dots" id="carouselDots"></div>
+              <div class="carousel-arrows">
+                <button class="carousel-btn" onclick="carouselMove(-1)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                </button>
+                <button class="carousel-btn" onclick="carouselMove(1)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div><!-- /cream-right -->
+
+        </div><!-- /cream-inner -->
+      </div><!-- /cream-panel -->
+
+    </div><!-- /scene-sticky -->
+  </div><!-- /scroll-scene -->
+
+
+  <!-- ══════════ OFFERINGS ══════════ -->
+  <section id="offerings">
+    <div class="section-inner">
+      <div class="section-label reveal"><span class="lang-de">Angebot</span><span class="lang-fr">Offres</span><span class="lang-en">Offerings</span></div>
+      <h2 class="section-h2 reveal reveal-delay-1">
+        <span class="lang-de">Was wir <em>anbieten.</em></span>
+        <span class="lang-fr">Ce que <em>nous offrons.</em></span>
+        <span class="lang-en">What we <em>offer.</em></span>
+      </h2>
+      <div class="offerings-grid">
+        <div class="offering-card reveal">
+          <img src="https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=700&q=80" alt="Take Away" loading="lazy"/>
+          <div class="offering-always"><div class="offering-num">01</div><div class="offering-title">Take Away</div></div>
+          <div class="offering-info">
+            <div class="offering-num">01</div><div class="offering-title">Take Away</div>
+            <p class="offering-desc"><span class="lang-de">Frisches Sushi direkt am Bahnhof. Mo–Fr 11–21 Uhr, Sa ab 17 Uhr.</span><span class="lang-fr">Sushis frais à la gare. Lu–Ve 11h–21h, Sa dès 17h.</span><span class="lang-en">Fresh sushi at the station. Mon–Fri 11am–9pm, Sat from 5pm.</span></p>
+          </div>
+        </div>
+        <div class="offering-card reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=700&q=80" alt="Delivery" loading="lazy"/>
+          <div class="offering-always"><div class="offering-num">02</div><div class="offering-title lang-de">Lieferung</div><div class="offering-title lang-fr">Livraison</div><div class="offering-title lang-en">Delivery</div></div>
+          <div class="offering-info">
+            <div class="offering-num">02</div>
+            <div class="offering-title lang-de">Lieferung</div><div class="offering-title lang-fr">Livraison</div><div class="offering-title lang-en">Delivery</div>
+            <p class="offering-desc"><span class="lang-de">Frisch nach Hause. Mo–Fr 11:30–13:30 & 17:30–20:30, Sa 17:30–20:30.</span><span class="lang-fr">Livré frais. Lu–Ve 11h30–20h30, Sa 17h30–20h30.</span><span class="lang-en">Delivered fresh. Mon–Fri 11:30–20:30, Sat 17:30–20:30.</span></p>
+          </div>
+        </div>
+        <div class="offering-card reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=700&q=80" alt="Catering" loading="lazy"/>
+          <div class="offering-always"><div class="offering-num">03</div><div class="offering-title">Catering</div></div>
+          <div class="offering-info">
+            <div class="offering-num">03</div><div class="offering-title">Catering</div>
+            <p class="offering-desc"><span class="lang-de">Für Events & Feiern — individuell abgestimmt.</span><span class="lang-fr">Pour événements — personnalisé.</span><span class="lang-en">For events — individually tailored.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MENU ══════════ -->
+  <section id="menu">
+    <div class="section-inner">
+      <div class="menu-header">
+        <div class="section-label reveal" style="justify-content:center;"><span class="lang-de">Speisekarte</span><span class="lang-fr">Menu</span><span class="lang-en">Menu</span></div>
+        <h2 class="section-h2 reveal reveal-delay-1" style="text-align:center;"><span class="lang-de">Frisch. <em>Täglich.</em></span><span class="lang-fr">Frais. <em>Chaque jour.</em></span><span class="lang-en">Fresh. <em>Daily.</em></span></h2>
+      </div>
+      <div class="menu-tabs reveal">
+        <button class="menu-tab active" onclick="switchTab('nigiri',this)">Nigiri</button>
+        <button class="menu-tab" onclick="switchTab('maki',this)">Maki</button>
+        <button class="menu-tab" onclick="switchTab('special',this)">Special Rolls</button>
+        <button class="menu-tab" onclick="switchTab('sets',this)">Sets</button>
+      </div>
+      <div class="menu-panel active" id="tab-nigiri">
+        <div class="menu-grid">
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Lachs Nigiri</div><div class="menu-item-desc lang-de">Atlantischer Lachs, Sushi-Reis, Wasabi</div><div class="menu-item-desc lang-fr">Saumon atlantique, riz à sushi, wasabi</div><div class="menu-item-desc lang-en">Atlantic salmon, sushi rice, wasabi</div></div><div class="menu-item-price">CHF 3.80</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">Thunfisch Nigiri</div><div class="menu-item-desc lang-de">Premium Thunfisch, Sushi-Reis</div><div class="menu-item-desc lang-fr">Thon premium, riz à sushi</div><div class="menu-item-desc lang-en">Premium tuna, sushi rice</div></div><div class="menu-item-price">CHF 4.20</div></div>
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Garnelen Nigiri</div><div class="menu-item-desc lang-de">Tiger-Garnelen, Ingwer</div><div class="menu-item-desc lang-fr">Crevettes tigres, gingembre</div><div class="menu-item-desc lang-en">Tiger shrimp, ginger</div></div><div class="menu-item-price">CHF 3.60</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">Jakobsmuschel Nigiri</div><div class="menu-item-desc lang-de">Frische Jakobsmuscheln, Yuzu</div><div class="menu-item-desc lang-fr">Saint-Jacques fraîches, yuzu</div><div class="menu-item-desc lang-en">Fresh scallops, yuzu</div></div><div class="menu-item-price">CHF 5.50</div></div>
+        </div>
+      </div>
+      <div class="menu-panel" id="tab-maki">
+        <div class="menu-grid">
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Lachs Maki (6 Stk.)</div><div class="menu-item-desc lang-de">Lachs, Gurke, Nori</div><div class="menu-item-desc lang-fr">Saumon, concombre, nori</div><div class="menu-item-desc lang-en">Salmon, cucumber, nori</div></div><div class="menu-item-price">CHF 8.50</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">California Roll (8 Stk.)</div><div class="menu-item-desc lang-de">Krabbenstäbchen, Avocado, Masago</div><div class="menu-item-desc lang-fr">Bâtons de crabe, avocat, masago</div><div class="menu-item-desc lang-en">Crab stick, avocado, masago</div></div><div class="menu-item-price">CHF 11.00</div></div>
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Thunfisch Maki (6 Stk.)</div><div class="menu-item-desc lang-de">Thunfisch, Frühlingszwiebeln</div><div class="menu-item-desc lang-fr">Thon, oignons verts</div><div class="menu-item-desc lang-en">Tuna, spring onions</div></div><div class="menu-item-price">CHF 9.00</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">Veggie Maki (6 Stk.)</div><div class="menu-item-desc lang-de">Avocado, Gurke, Karotte</div><div class="menu-item-desc lang-fr">Avocat, concombre, carotte</div><div class="menu-item-desc lang-en">Avocado, cucumber, carrot</div></div><div class="menu-item-price">CHF 7.50</div></div>
+        </div>
+      </div>
+      <div class="menu-panel" id="tab-special">
+        <div class="menu-grid">
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Dragon Roll (8 Stk.)</div><div class="menu-item-desc lang-de">Garnelen Tempura, Avocado, Sriracha-Mayo</div><div class="menu-item-desc lang-fr">Crevettes tempura, avocat, mayo sriracha</div><div class="menu-item-desc lang-en">Shrimp tempura, avocado, sriracha mayo</div></div><div class="menu-item-price">CHF 18.50</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">HeiSei Special (10 Stk.)</div><div class="menu-item-desc lang-de">Signature Roll mit Trüffel-Soja</div><div class="menu-item-desc lang-fr">Roll signature au soja truffe</div><div class="menu-item-desc lang-en">Signature roll with truffle soy</div></div><div class="menu-item-price">CHF 24.00</div></div>
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Rainbow Roll (8 Stk.)</div><div class="menu-item-desc lang-de">California innen, fünf Fische aussen</div><div class="menu-item-desc lang-fr">California intérieur, cinq poissons</div><div class="menu-item-desc lang-en">California inside, five fish outside</div></div><div class="menu-item-price">CHF 22.00</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">Volcano Roll (8 Stk.)</div><div class="menu-item-desc lang-de">Lachs, Jalapeño, gebacken mit Käse</div><div class="menu-item-desc lang-fr">Saumon, jalapeño, gratiné au fromage</div><div class="menu-item-desc lang-en">Salmon, jalapeño, baked with cheese</div></div><div class="menu-item-price">CHF 19.00</div></div>
+        </div>
+      </div>
+      <div class="menu-panel" id="tab-sets">
+        <div class="menu-grid">
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name lang-de">Einsteiger Set</div><div class="menu-item-name lang-fr">Set Débutant</div><div class="menu-item-name lang-en">Starter Set</div><div class="menu-item-desc">8 Nigiri + 6 Maki</div></div><div class="menu-item-price">CHF 26.00</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name">Duo Set</div><div class="menu-item-desc">16 Nigiri + 12 Maki + 8 Special Rolls</div></div><div class="menu-item-price">CHF 54.00</div></div>
+          <div class="menu-item reveal"><div class="menu-item-info"><div class="menu-item-name">Omakase Set</div><div class="menu-item-desc lang-de">Chef's choice — täglich, 20 Stücke</div><div class="menu-item-desc lang-fr">Choix du chef — 20 pièces</div><div class="menu-item-desc lang-en">Chef's choice — daily, 20 pieces</div></div><div class="menu-item-price">CHF 68.00</div></div>
+          <div class="menu-item reveal reveal-delay-1"><div class="menu-item-info"><div class="menu-item-name lang-de">Familien Set</div><div class="menu-item-name lang-fr">Set Famille</div><div class="menu-item-name lang-en">Family Set</div><div class="menu-item-desc lang-de">32 gemischte Stücke für 4 Personen</div><div class="menu-item-desc lang-fr">32 pièces pour 4 personnes</div><div class="menu-item-desc lang-en">32 mixed pieces for 4</div></div><div class="menu-item-price">CHF 98.00</div></div>
+        </div>
+      </div>
+      <div class="menu-order-cta reveal">
+        <a href="https://heiseisushi.ch/bestellen" target="_blank" class="btn-primary">
+          <span class="lang-de">Online bestellen</span><span class="lang-fr">Commander en ligne</span><span class="lang-en">Order Online</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ COURSES ══════════ -->
+  <section id="courses">
+    <div class="section-inner">
+      <div class="section-label reveal"><span class="lang-de">Kurse</span><span class="lang-fr">Cours</span><span class="lang-en">Courses</span></div>
+      <h2 class="section-h2 reveal reveal-delay-1" style="max-width:600px;">
+        <span class="lang-de">Lerne die Kunst <em>der Sushi-Zubereitung.</em></span>
+        <span class="lang-fr">Apprenez l'art <em>de la préparation.</em></span>
+        <span class="lang-en">Learn the art <em>of sushi preparation.</em></span>
+      </h2>
+      <div class="courses-grid">
+        <div class="course-card reveal" data-num="01">
+          <svg class="course-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="24" cy="24" r="18"/><path d="M24 6v36M6 24h36"/></svg>
+          <h3><span class="lang-de">Öffentliche Kurse</span><span class="lang-fr">Cours Publics</span><span class="lang-en">Public Courses</span></h3>
+          <p><span class="lang-de">Sushi in kleinen Gruppen lernen: Reiskochen, Fisch schneiden, Nigiri & Maki. Samstags, 8–12 Personen.</span><span class="lang-fr">Apprenez le sushi en petits groupes. Le samedi, 8–12 personnes.</span><span class="lang-en">Learn sushi in small groups. Saturdays, 8–12 people.</span></p>
+          <span class="course-tag"><span class="lang-de">Sa — 8–12 Pers.</span><span class="lang-fr">Sa — 8–12 Pers.</span><span class="lang-en">Sat — 8–12 Ppl.</span></span>
+        </div>
+        <div class="course-card reveal reveal-delay-1" data-num="02">
+          <svg class="course-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M16 24h16M24 16v16"/></svg>
+          <h3><span class="lang-de">Firmenkurse</span><span class="lang-fr">Cours d'Entreprise</span><span class="lang-en">Corporate Courses</span></h3>
+          <p><span class="lang-de">Sushi als Teamevent — massgeschneidert für Ihre Gruppe.</span><span class="lang-fr">Sushi comme événement d'équipe — sur mesure.</span><span class="lang-en">Sushi as a team event — tailored for your group.</span></p>
+          <span class="course-tag"><span class="lang-de">Auf Anfrage</span><span class="lang-fr">Sur demande</span><span class="lang-en">On request</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ VISIT ══════════ -->
+  <section id="visit">
+    <div class="section-inner">
+      <div class="section-label reveal"><span class="lang-de">Besuchen Sie uns</span><span class="lang-fr">Visitez-nous</span><span class="lang-en">Visit Us</span></div>
+      <h2 class="section-h2 reveal reveal-delay-1">
+        <span class="lang-de">Wir freuen uns <em>auf Sie.</em></span>
+        <span class="lang-fr">Nous avons hâte <em>de vous accueillir.</em></span>
+        <span class="lang-en">We look forward <em>to seeing you.</em></span>
+      </h2>
+      <div class="visit-grid">
+        <div class="visit-info">
+          <div class="info-block">
+            <div class="info-label lang-de">Adresse</div><div class="info-label lang-fr">Adresse</div><div class="info-label lang-en">Address</div>
+            <p>HeiSei Sushi<br>Bahnhofstrasse 16<br>5722 Gränichen, Schweiz</p>
+          </div>
+          <div class="info-block">
+            <div class="info-label lang-de">Kontakt</div><div class="info-label lang-fr">Contact</div><div class="info-label lang-en">Contact</div>
+            <p><a href="tel:+41625081474">+41 62 508 14 74</a><br><a href="mailto:info@heiseisushi.ch">info@heiseisushi.ch</a><br><a href="https://wa.me/41625081474">WhatsApp</a></p>
+          </div>
+          <div class="info-block">
+            <div class="info-label lang-de">Öffnungszeiten</div><div class="info-label lang-fr">Horaires</div><div class="info-label lang-en">Opening Hours</div>
+            <div class="hours-grid">
+              <div><h4>Take Away</h4>
+                <div class="hours-row"><span class="lang-de">Mo–Fr</span><span class="lang-fr">Lu–Ve</span><span class="lang-en">Mon–Fri</span><span>11–14 & 16:30–21</span></div>
+                <div class="hours-row"><span class="lang-de">Sa</span><span class="lang-fr">Sa</span><span class="lang-en">Sat</span><span>17–22</span></div>
+              </div>
+              <div><h4 class="lang-de">Lieferung</h4><h4 class="lang-fr">Livraison</h4><h4 class="lang-en">Delivery</h4>
+                <div class="hours-row"><span class="lang-de">Mo–Fr</span><span class="lang-fr">Lu–Ve</span><span class="lang-en">Mon–Fri</span><span>11:30–20:30</span></div>
+                <div class="hours-row"><span class="lang-de">Sa</span><span class="lang-fr">Sa</span><span class="lang-en">Sat</span><span>17:30–20:30</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.8!2d8.1!3d47.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47903b!2sGr%C3%A4nichen!5e0!3m2!1sde!2sch!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="visit-form">
+          <h3><span class="lang-de">Anfrage senden</span><span class="lang-fr">Envoyer une demande</span><span class="lang-en">Send an enquiry</span></h3>
+          <form onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group"><label class="lang-de">Vorname</label><label class="lang-fr">Prénom</label><label class="lang-en">First name</label><input type="text" required placeholder="Anna"/></div>
+              <div class="form-group"><label class="lang-de">Nachname</label><label class="lang-fr">Nom</label><label class="lang-en">Last name</label><input type="text" required placeholder="Müller"/></div>
+            </div>
+            <div class="form-group"><label>Email</label><input type="email" required placeholder="anna@email.ch"/></div>
+            <div class="form-group">
+              <label class="lang-de">Betreff</label><label class="lang-fr">Sujet</label><label class="lang-en">Subject</label>
+              <select><option>Catering</option><option class="lang-de">Sushi-Kurs</option><option class="lang-fr">Cours de sushi</option><option class="lang-en">Sushi course</option><option class="lang-de">Allgemeine Anfrage</option><option class="lang-fr">Demande générale</option><option class="lang-en">General enquiry</option></select>
+            </div>
+            <div class="form-group"><label class="lang-de">Nachricht</label><label class="lang-fr">Message</label><label class="lang-en">Message</label><textarea placeholder="..."></textarea></div>
+            <button type="submit" class="form-submit"><span class="lang-de">Senden</span><span class="lang-fr">Envoyer</span><span class="lang-en">Send</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="section-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="font-size:1.1rem;">
+            <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="2" fill="#651A38"/><path d="M32 52L32 38" stroke="#B88A72" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="20" cy="21" rx="6" ry="4" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/><ellipse cx="32" cy="14" rx="5" ry="3.5" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/><ellipse cx="44" cy="18" rx="4.5" ry="3" fill="#651A38" stroke="#B88A72" stroke-width="0.8"/><rect x="25" y="40" width="14" height="3" rx="1" fill="#B88A72" opacity="0.6"/></svg>
+            HeiSei Sushi
+          </div>
+          <p><span class="lang-de">Die Vielfalt der Sushi Zubereitung — handgefertigt in Gränichen.</span><span class="lang-fr">La diversité de la préparation — fait à la main à Gränichen.</span><span class="lang-en">The diversity of sushi preparation — handcrafted in Gränichen.</span></p>
+          <div class="footer-social">
+            <a href="https://facebook.com" target="_blank" class="social-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://instagram.com" target="_blank" class="social-link"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+            <a href="https://wa.me/41625081474" target="_blank" class="social-link"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51C11.074 7.01 10.876 7 10.677 7c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#offerings"><span class="lang-de">Angebot</span><span class="lang-fr">Offres</span><span class="lang-en">Offerings</span></a></li>
+            <li><a href="#menu"><span class="lang-de">Speisekarte</span><span class="lang-fr">Menu</span><span class="lang-en">Menu</span></a></li>
+            <li><a href="#courses"><span class="lang-de">Kurse</span><span class="lang-fr">Cours</span><span class="lang-en">Courses</span></a></li>
+            <li><a href="#visit"><span class="lang-de">Kontakt</span><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="lang-de">Rechtliches</h4><h4 class="lang-fr">Légal</h4><h4 class="lang-en">Legal</h4>
+          <ul>
+            <li><a href="https://heiseisushi.ch/impressum" target="_blank">Impressum</a></li>
+            <li><a href="https://heiseisushi.ch/datenschutz" target="_blank"><span class="lang-de">Datenschutz</span><span class="lang-fr">Confidentialité</span><span class="lang-en">Privacy</span></a></li>
+            <li><a href="https://heiseisushi.ch/agb" target="_blank">AGB / CGV / T&C</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="lang-de">Kontakt</h4><h4 class="lang-fr">Contact</h4><h4 class="lang-en">Contact</h4>
+          <ul>
+            <li><a href="tel:+41625081474">+41 62 508 14 74</a></li>
+            <li><a href="mailto:info@heiseisushi.ch">info@heiseisushi.ch</a></li>
+            <li style="color:rgba(255,255,255,0.4);font-size:.82rem;line-height:1.6;">Bahnhofstrasse 16<br>5722 Gränichen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 HeiSei Sushi. <span class="lang-de">Alle Rechte vorbehalten.</span><span class="lang-fr">Tous droits réservés.</span><span class="lang-en">All rights reserved.</span></p>
+        <div class="footer-legal">
+          <a href="https://heiseisushi.ch/impressum" target="_blank">Impressum</a>
+          <a href="https://heiseisushi.ch/datenschutz" target="_blank">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
