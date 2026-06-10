@@ -164,8 +164,13 @@ for (let i = 0; i < SLIDES; i++) {
 const slides = carouselTrack.querySelectorAll('.carousel-slide');
 
 function goToSlide(n, resetAuto = true) {
+  const prev = currentSlide;
   currentSlide = (n + SLIDES) % SLIDES;
-  slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
+  slides.forEach((s, i) => {
+    s.classList.remove('active', 'prev');
+    if (i === currentSlide) s.classList.add('active');
+    else if (i === prev)    s.classList.add('prev');
+  });
   dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
     d.classList.toggle('active', i === currentSlide);
   });
