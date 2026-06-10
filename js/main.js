@@ -45,6 +45,7 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
+const SLIDES = 5;
 let lastSlide = -1;
 
 function updateScene() {
@@ -147,7 +148,6 @@ function switchTab(id, btn) {
 }
 
 /* ── CARRUSEL ────────────────────────────────────────────────────── */
-const SLIDES = 5;
 let currentSlide = 0;
 let autoTimer;
 
