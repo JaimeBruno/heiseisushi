@@ -286,16 +286,17 @@ nav::before {
 }
 /* La imagen se mueve más lento que el contenedor — efecto parallax */
 .carousel-slide img {
-  width: 130%; height: 100%; object-fit: cover; display: block;
-  margin-left: -15%;
-  transform: translateX(15%);
+  position: absolute;
+  width: 120%; height: 100%; object-fit: cover; display: block;
+  top: 0; left: -10%;
+  transform: translateX(20%);
   transition: transform 0.85s cubic-bezier(.76,0,.24,1);
 }
 .carousel-slide.active img {
   transform: translateX(0%);
 }
 .carousel-slide.prev img {
-  transform: translateX(-10%);
+  transform: translateX(-15%);
 }
 .slide-ph { display: none; position: absolute; inset: 0; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(101,26,56,0.4); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .carousel-slide.no-img .slide-ph { display: flex; }
