@@ -161,14 +161,18 @@ for (let i = 0; i < SLIDES; i++) {
   dotsWrap.appendChild(d);
 }
 
+const slides = carouselTrack.querySelectorAll('.carousel-slide');
+
 function goToSlide(n, resetAuto = true) {
   currentSlide = (n + SLIDES) % SLIDES;
-  carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+  slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
   dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
     d.classList.toggle('active', i === currentSlide);
   });
   if (resetAuto) resetTimer();
 }
+// Activar el primer slide al cargar
+slides[0].classList.add('active');
 function carouselMove(dir) { goToSlide(currentSlide + dir); }
 function resetTimer() {
   clearInterval(autoTimer);

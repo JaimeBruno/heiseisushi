@@ -265,19 +265,28 @@ nav::before {
   position: relative; width: 100%; aspect-ratio: 4/3;
   overflow: hidden; border-radius: 3px;
 }
+/* El track no se mueve — las slides se superponen con opacity */
 .carousel-track {
-  display: flex; width: 100%; height: 100%;
-  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+  position: relative; width: 100%; height: 100%;
 }
 .carousel-slide {
-  min-width: 100%; height: 100%;
-  position: relative; overflow: hidden;
+  position: absolute; inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.1s cubic-bezier(.4,0,.2,1);
   background: rgba(101,26,56,0.06);
-  border: 1px dashed rgba(101,26,56,0.2);
 }
-.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease; }
-.carousel-slide.no-img img { display: none; }
-.carousel-wrap:hover .carousel-slide img { transform: scale(1.04); }
+.carousel-slide.active { opacity: 1; }
+/* Ken Burns: zoom lento en la imagen activa */
+.carousel-slide img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transform: scale(1.08);
+  transition: transform 0s;
+}
+.carousel-slide.active img {
+  transform: scale(1.0);
+  transition: transform 6s cubic-bezier(.2,0,.1,1);
+}
 .slide-ph { display: none; position: absolute; inset: 0; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(101,26,56,0.4); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .carousel-slide.no-img .slide-ph { display: flex; }
 
@@ -506,7 +515,7 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.05); p
   .nav-right .lang-divider { display: none; } /* sólo CTA + hamburger */
 
   /* Scroll scene */
-  .hero-name { left: 20px; top: 38%; transform: translateY(-50%); }
+  .hero-name { left: 20px; top: 30%; transform: translateY(-50%); }
   .hero-name-title { font-size: clamp(3.2rem, 13vw, 5.5rem); }
 
   /* Cream panel: columna única, carrusel arriba, CTA debajo */
