@@ -265,39 +265,16 @@ nav::before {
   position: relative; width: 100%; aspect-ratio: 4/3;
   overflow: hidden; border-radius: 3px;
 }
-/* Parallax slide — el contenedor se desplaza, la imagen interior va más lento */
 .carousel-track {
-  position: absolute; inset: 0;
+  display: flex; width: 100%; height: 100%;
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
 }
 .carousel-slide {
-  position: absolute; inset: 0;
-  overflow: hidden;
-  transform: translateX(100%);
-  transition: transform 0.85s cubic-bezier(.76,0,.24,1);
+  min-width: 100%; height: 100%;
+  position: relative; overflow: hidden;
   background: rgba(101,26,56,0.06);
 }
-.carousel-slide.active {
-  transform: translateX(0%);
-  z-index: 2;
-}
-.carousel-slide.prev {
-  transform: translateX(-30%);
-  z-index: 1;
-}
-/* La imagen se mueve más lento que el contenedor — efecto parallax */
-.carousel-slide img {
-  position: absolute;
-  width: 120%; height: 100%; object-fit: cover; display: block;
-  top: 0; left: -10%;
-  transform: translateX(20%);
-  transition: transform 0.85s cubic-bezier(.76,0,.24,1);
-}
-.carousel-slide.active img {
-  transform: translateX(0%);
-}
-.carousel-slide.prev img {
-  transform: translateX(-15%);
-}
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .slide-ph { display: none; position: absolute; inset: 0; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(101,26,56,0.4); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .carousel-slide.no-img .slide-ph { display: flex; }
 
@@ -391,49 +368,6 @@ section { position: relative; }
 .map-embed { margin-top: 40px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
 .map-embed iframe { width: 100%; height: 220px; display: block; border: none; filter: grayscale(1) invert(0.85) sepia(0.3) hue-rotate(310deg) saturate(0.6); }
 
-/* ── SPONSORS ──────────────────────────────────────────────────── */
-#sponsors {
-  padding: 100px 0;
-  background: linear-gradient(180deg, #150a0e 0%, var(--ink) 100%);
-  border-top: 1px solid rgba(255,255,255,0.04);
-}
-.sponsors-header { text-align: center; margin-bottom: 64px; }
-.sponsors-thanks {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.sponsors-thanks em { color: var(--sand); font-style: italic; }
-.sponsors-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-}
-.sponsor-card {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 14px; padding: 36px 28px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: background 0.4s, border-color 0.4s;
-  min-height: 140px;
-}
-.sponsor-card:hover { background: rgba(101,26,56,0.1); border-color: rgba(184,138,114,0.2); }
-.sponsor-card img {
-  max-width: 160px; max-height: 70px; width: auto; height: auto; object-fit: contain;
-  filter: grayscale(1) brightness(1.8) opacity(0.5);
-  transition: filter 0.4s;
-}
-.sponsor-card:hover img { filter: grayscale(0) brightness(1) opacity(1); }
-.sponsor-name {
-  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3); text-align: center; transition: color 0.4s;
-}
-.sponsor-card:hover .sponsor-name { color: var(--sand); }
-
 /* ── BTN ───────────────────────────────────────────────────────── */
 .btn-primary { background: var(--crimson); color: var(--white); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 16px 36px; border-radius: 2px; display: inline-block; transition: background 0.3s, transform 0.2s; border: 1px solid transparent; }
 .btn-primary:hover { background: transparent; border-color: var(--sand); color: var(--sand); transform: translateY(-2px); }
@@ -478,9 +412,6 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.05); p
 /* ── 1024px: Tablet landscape — hamburger, layout simplificado ── */
 @media (max-width: 1024px) {
   /* Sponsors */
-  .sponsors-grid { grid-template-columns: repeat(3, 1fr); }
-  #sponsors { padding: 72px 0; }
-
   /* Nav */
   nav { padding: 0 32px; height: 64px; }
   .nav-links { display: none; }
@@ -514,10 +445,6 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.05); p
 /* ── 768px: Tablet portrait / móvil grande ── */
 @media (max-width: 768px) {
   /* Sponsors */
-  .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
-  #sponsors { padding: 56px 0; }
-  .sponsors-header { margin-bottom: 40px; }
-
   /* Nav */
   nav { padding: 0 20px; height: 60px; }
   .nav-logo { font-size: 1.1rem; }
@@ -590,10 +517,6 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.05); p
 /* ── 480px: Móvil pequeño ── */
 @media (max-width: 480px) {
   /* Sponsors */
-  .sponsors-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
-  .sponsor-card { padding: 24px 16px; min-height: 110px; }
-  .sponsor-card img { max-width: 120px; max-height: 52px; }
-
   /* Nav */
   nav { padding: 0 16px; height: 56px; }
   .nav-cta { display: none; } /* solo hamburger en pantallas muy pequeñas */
