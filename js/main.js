@@ -45,7 +45,7 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
-const SLIDES = 5;
+const SLIDES = 4;
 let lastSlide = -1;
 
 function updateScene() {
@@ -106,7 +106,9 @@ function updateScene() {
 }
 
 window.addEventListener('scroll', updateScene, { passive: true });
-updateScene();
+// NOTA: la llamada inicial a updateScene() está al FINAL del archivo,
+// después de inicializar el carrusel — si se llama antes y la página
+// carga con scroll restaurado, goToSlide() crashea (carouselTrack aún no existe).
 
 /* ── SCROLL REVEAL (secciones inferiores) ────────────────────────── */
 // Primero añadir la clase que pone opacity:0 via JS (si JS falla, el contenido es visible)
@@ -182,6 +184,9 @@ function resetTimer() {
   }, 4500);
 }
 resetTimer();
+
+// Estado inicial de la escena — AHORA que el carrusel ya está inicializado
+updateScene();
 
 // Swipe móvil
 let touchStartX = 0;

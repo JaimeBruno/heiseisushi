@@ -111,12 +111,12 @@ nav::before {
   position: relative;
   /*
     120vh  = fase 1: crema sube
-    4×100vh = fase 2: 4 transiciones de carrusel (5 slides)
+    3×100vh = fase 2: 3 transiciones de carrusel (4 slides)
     100vh  = viewport
-    Total  = 620vh
+    Total  = 520vh
     Si cambias el nº de slides actualiza también SLIDES en main.js
   */
-  height: 620vh;
+  height: 520vh;
 }
 
 .scene-sticky {
