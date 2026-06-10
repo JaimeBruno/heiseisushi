@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "heiseisushi",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3000", "C:\\Users\\heywa\\Desktop\\heiseisushi"],
+      "port": 3000
+    }
+  ]
+}
